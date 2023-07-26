@@ -1,0 +1,25 @@
+{
+  "name": "api-automation-eos",
+  "version": "1.0.0",
+  "description": "This project is to automate all the APIs with Unit Test Script, Integration Test Script and end 2 end test script in the EOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1-Fin/API-Automation-EOS.git"
+  },
+  "author": "Bharath Battini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1-Fin/API-Automation-EOS/issues"
+  },
+  "homepage": "https://github.com/1-Fin/API-Automation-EOS#readme",
+  "devDependencies": {
+    "cypress": "^12.17.2"
+  },
+  "dependencies": {
+    "cypress-plugin-api": "^2.11.1"
+  }
+}
