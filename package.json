@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/1-Fin/API-Automation-EOS#readme",
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.40.0",
     "cypress": "^12.17.2"
   },
   "dependencies": {
