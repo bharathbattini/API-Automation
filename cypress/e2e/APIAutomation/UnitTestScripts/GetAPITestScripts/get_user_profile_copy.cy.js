@@ -11,7 +11,7 @@ const gm = new getMethods();
 
 describe('Get User Profile Unit Test Scripts', () => {
 
-    it.only('Get User Profile with Positive Case', () => {
+    it('Get User Profile with Positive Case', () => {
 
         gm.getProfileMethods('GET',userProfileUrl,usercode).then((response) => {
 
@@ -28,7 +28,7 @@ describe('Get User Profile Unit Test Scripts', () => {
             expect(response.status).to.be.eq(415);
             expect(response.body).to.have.property('type').to.be.a('String');
             expect(response.body).to.have.property('title').to.be.a('String');
-            expect(response.body).to.have.property('title').to.have('Unsupported Media Type');
+            expect(response.body).to.have.property('title').contain('Unsupported Media Type');
             expect(response.body).to.have.property('status').to.be.a('number');
             expect(response.body).to.have.property('traceId').to.be.a('String');
         });

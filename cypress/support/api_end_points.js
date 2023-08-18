@@ -14,7 +14,12 @@ const apiEndpoints = {
     getQFAList : 'api/qfa/list',
 
     // POST APIs End Points In EOS API Platform
-
+    postUserProfile : 'api/customer/profile',
+    postUserDependent : 'api/customer/dependent',
+    postIncomeExpense : 'api/customer/income-expense',
+    postUserLoans : 'api/customer/loans',
+    postUserInsurance : 'api/customer/insurance',
+    postRefreshWorkbook : 'api/user/generate/fwp',
 
 
     //RIA APIs End Points In EOS API Platform
@@ -27,7 +32,6 @@ const apiEndpoints = {
 
     //Invalid API End Points
     invalidGetUserProfile : 'api/customer/profil',
-
 
 }
 

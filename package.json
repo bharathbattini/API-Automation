@@ -3,8 +3,16 @@
   "version": "1.0.0",
   "description": "This project is to automate all the APIs with Unit Test Script, Integration Test Script and end 2 end test script in the EOS",
   "main": "index.js",
+  "env": {
+    "allureResultsPath": "allure-results"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:run": "cypress run --env allure=true --spec cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_profile_copy.cy.js --browser chrome",
+    "clean:folders": "rm -rf allure-report/* && rm -rf allure-results/*",
+    "allure:report": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "beforetest": "npm run clean:folders",
+    "tests": "npm run cy:run || npm run aftertest",
+    "aftertest": "npm run allure:report"
   },
   "repository": {
     "type": "git",
@@ -21,6 +29,7 @@
     "cypress": "^12.17.2"
   },
   "dependencies": {
-    "cypress-plugin-api": "^2.11.1"
+    "cypress-plugin-api": "^2.11.1",
+    "neat-csv": "^5.2.0"
   }
 }
