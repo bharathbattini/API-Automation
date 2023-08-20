@@ -32,6 +32,16 @@ const apiEndpoints = {
 
     //Invalid API End Points
     invalidGetUserProfile : 'api/customer/profil',
+    invalidGetUserDependent : 'api/customer/dependen',
+    invalidgetUserInvestments : 'api/customer/investments',
+    invalidgetUserLoans : 'api/customer/loans',
+    invalidgetUserIncomeExpense : 'api/customer/income-expense',
+    invalidgetUserInsurance : 'api/customer/insurance',
+    invalidgetMemberDetails : 'api/member/details',
+    invalidgetOnboardingStatusTracker : 'api/customer/onboarding_status/tracker',
+    invalidgetQFAList : 'api/qfa/list',
+
+
 
 }
 

@@ -3,7 +3,7 @@ import 'cypress-plugin-api'
 const neatCsv = require("neat-csv");
 
 const refreshWorkbookUrl = 'https://eos.onefin.app/api/user/generate/fwp?'
-let list = {usercode:[],response:[]}
+let list = {responsebody:[]}
 
 describe('Refresh Workbook Bulk Upload', () => {
 
@@ -29,10 +29,11 @@ describe('Refresh Workbook Bulk Upload', () => {
     
                         }).then((response) => {
     
-                            list.usercode.push(a.user_code)
-                            list.response.push(response.body);
+                            response.body.user_code = a.user_code;
+
+                            list.responsebody.push(response.body);
     
-                            cy.writeFile('/Users/bharath/Documents/cypressproject/cypress/fixtures/responsedata.json', list);
+                            cy.writeFile('/Users/bharath/Documents/API-Automation-EOS/cypress/fixtures/responsedata.json', list);
     
                         });
     

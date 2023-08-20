@@ -16,8 +16,7 @@ describe('Get User Profile Unit Test Scripts', () => {
         gm.getProfileMethods('GET',getCustomerProfile,usercode).then((response) => {
 
             expect(response.status).to.be.eq(200);
-            // expect(response.body).to.have.property('status').to.be.a('number');
-            // expect(response.body).to.have.property('message').to.be.a('String');
+
         });
 
     });

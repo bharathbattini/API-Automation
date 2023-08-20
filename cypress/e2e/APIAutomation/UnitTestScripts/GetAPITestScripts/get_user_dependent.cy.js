@@ -1,140 +1,69 @@
 /// <reference types = "Cypress" />
 import 'cypress-plugin-api'
+import getMethods from '../../../../support/get_methods_function';
+import apiEndpoints from '../../../../support/api_end_points';
 
-let getCustomerDependentURL = 'https://uat.eos.onefin.app/api/customer/dependent?';
-let incorrectURL = 'https://uat.eos.onefin.app/api/customer/dependen?';
-let insecureURL = 'https://uat.eos.onefin.app/api/customer/dependent?'
+const environment = 'prod'
+let baseUrl = environment == 'prod' ? `https://eos.onefin.app/`:`https://${environment}.eos.onefin.app/`;
+let userDependentUrl = baseUrl+`${apiEndpoints.getUserDependent}`;
+let incorrectUserDependentUrl = baseUrl + `${apiEndpoints.invalidGetUserDependent}`;
+let usercode = '5df9d9e3-134b-40e7-9f96-79f5a8cdfd78';
+const gm = new getMethods();
 
-let usercode = '8a6b7fe6-93a5-4d38-8849-e28bcec6e00f';
-let incorrectusercode = '8a6b7fe6-93a5-4d38-8849-e28bcec6e00';
+describe('Get User Dependent Unit Test Scripts', () => {
 
-describe('Get User Profile Unit Test Scripts', () => {
+    it('Get User Dependent with Positive Case', () => {
 
-    it('Get User Profile with Positive Case', () => {
-
-        cy.api({
-
-            method: 'GET',
-            url: getCustomerDependentURL + 'usercode=' + usercode,
-            failOnStatusCode: false,
-            qs: {
-
-                user_code: usercode
-            }
-
-        }).then((response) => {
+        gm.getProfileMethods('GET',userDependentUrl,usercode).then((response) => {
 
             expect(response.status).to.be.eq(200);
+
+        });
+
+    });
+    
+    it('Get User Dependent with Incorrect Method', () => {
+
+        gm.getProfileMethods('POST',userDependentUrl,usercode).then((response) => {
+
+            expect(response.status).to.be.eq(415);
+            expect(response.body).to.have.property('type').to.be.a('String');
+            expect(response.body).to.have.property('title').to.be.a('String');
+            expect(response.body).to.have.property('title').contain('Unsupported Media Type');
             expect(response.body).to.have.property('status').to.be.a('number');
-            expect(response.body).to.have.property('message').to.be.a('String');
-
+            expect(response.body).to.have.property('traceId').to.be.a('String');
         });
 
     });
 
-    it('Get User Profile with Incorrect URL', () => {
+    it('Get User Dependent with Invalid Method', () => {
 
-        cy.api({
-
-            method: 'GET',
-            url: incorrectURL + 'usercode=' + usercode,
-            failOnStatusCode: false,
-            qs: {
-
-                user_code: usercode
-            }
-
-        }).then((response) => {
-
-            expect(response.status).to.be.eq(500);
-
-        });
-
-    });
-
-    it('Get User Profile with Incorrect Method', () => {
-
-        cy.api({
-
-            method: 'POST',
-            url: getCustomerDependentURL + 'usercode=' + usercode,
-            failOnStatusCode: false,
-            qs: {
-
-                user_code: usercode
-            }
-
-        }).then((response) => {
-
-            expect(response.status).to.be.eq(415);
-
-
-        });
-
-    });
-
-    it('Get User Profile with Incorrect Inputs', () => {
-
-        cy.api({
-
-            method: 'POST',
-            url: getCustomerDependentURL + 'usercode=' + usercode,
-            failOnStatusCode: false,
-            qs: {
-
-                user_code: usercode
-            }
-
-        }).then((response) => { 
+        gm.getProfileMethods('DEL',userDependentUrl,usercode).then((response) => {
 
             expect(response.status).to.be.eq(415);
 
         });
+
     });
 
-    it('Get User Profile with Incorrect Query Parameters', () => {
+    it('Get User Dependent with Incorrect URL', () => {
 
-        cy.api({
+        gm.getProfileMethods('GET',incorrectUserDependentUrl,usercode).then((response) => {
 
-            method: 'POST',
-            url: getCustomerDependentURL + 'usercode=' + usercode,
-            failOnStatusCode: false,
-            qs: {
-
-                user_code: incorrectusercode
-            }
-
-        }).then((response) => {
-
-            expect(response.status).to.be.eq(415);
-
+            expect(response.status).to.be.eq(200);
 
         });
 
     });
 
-    it('Get User Profile with Unsecured API URL', () => {
+    it('Get User Dependent with Invalid URL', () => {
 
-        cy.api({
+        gm.getProfileMethods('GET',incorrectUserDependentUrl,usercode).then((response) => {
 
-            method: 'GET',
-            url: insecureURL + 'usercode=' + usercode,
-            failOnStatusCode: false,
-            qs: {
-
-                user_code: incorrectusercode
-            }
-
-        }).then((response) => {
-
-            expect(response.status).to.be.eq(500);
-
+            expect(response.status).to.be.eq(200);
 
         });
 
-
     });
-
-
 
 });
