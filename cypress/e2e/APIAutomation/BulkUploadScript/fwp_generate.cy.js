@@ -36,7 +36,7 @@ describe('FWP Generate Data Bulk Upload', () => {
                         list.usercode.push(a.user_code)
                         list.response_code.push(response.status);
 
-                        cy.writeFile('/Users/bharath/Documents/cypressproject/cypress/fixtures/responsedata.json', list);
+                        cy.writeFile('/Users/bharath/Documents/API-Automation-EOS/cypress/fixtures/fwp_generate_responsedata.json', list);
 
                     });
 

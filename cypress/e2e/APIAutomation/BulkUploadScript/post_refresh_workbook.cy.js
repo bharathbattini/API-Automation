@@ -9,13 +9,13 @@ describe('Refresh Workbook Bulk Upload', () => {
 
     it('Refresh Workbook', () => {
 
-            cy.readFile('/Users/bharath/Downloads/generate_workbook.csv').
+            cy.readFile('/Users/bharath/Downloads/workbook_refresh.csv').
                 then(neatCsv).
                 then(jsondata => {
         
                     console.log(jsondata);
 
-                    jsondata.forEach(a => {
+                    jsondata.forEach((a,i) => {
     
                         cy.api({
     
@@ -30,10 +30,12 @@ describe('Refresh Workbook Bulk Upload', () => {
                         }).then((response) => {
     
                             response.body.user_code = a.user_code;
-
+                            console.log(i);
+                            
+                            response.body.index = i;
                             list.responsebody.push(response.body);
     
-                            cy.writeFile('/Users/bharath/Documents/API-Automation-EOS/cypress/fixtures/responsedata.json', list);
+                            cy.writeFile('/Users/bharath/Documents/API-Automation-EOS/cypress/fixtures/refresh_workbook_responsedata.json', list);
     
                         });
     

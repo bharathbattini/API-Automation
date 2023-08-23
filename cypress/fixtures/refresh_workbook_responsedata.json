@@ -1,0 +1,22 @@
+{
+  "responsebody": [
+    {
+      "status": 400,
+      "message": "Something went wrong, please contact system admin!",
+      "error": "",
+      "stackTrace": "",
+      "data": {},
+      "user_code": "ca2da379-763f-43fc-8073-65497c34ccd5",
+      "index": 0
+    },
+    {
+      "status": 400,
+      "message": "Something went wrong, please contact system admin!",
+      "error": "",
+      "stackTrace": "",
+      "data": {},
+      "user_code": "ca2da379-763f-43fc-8073-65497c34ccd6",
+      "index": 1
+    }
+  ]
+}

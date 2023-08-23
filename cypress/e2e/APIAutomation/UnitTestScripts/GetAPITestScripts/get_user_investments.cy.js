@@ -38,7 +38,7 @@ describe('Get User Investments Unit Test Scripts', () => {
 
     it('Get User Investments with Invalid Method', () => {
 
-        gm.getProfileMethods('DEL',userInvestmentsUrl,usercode).then((response) => {
+        gm.getProfileMethods('DELETE',userInvestmentsUrl,usercode).then((response) => {
 
             expect(response.status).to.be.eq(415);
 
