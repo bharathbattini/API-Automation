@@ -19,8 +19,6 @@ const gm = new getMethods();
 
 describe('Member Onboarding - PAN Validation Test Scripts', ()=> {
 
-    debugger;
-
     it('PAN Validation with Valid Usercode and PAN', ()=>{
 
         cy.api({
@@ -64,5 +62,116 @@ describe('Member Onboarding - PAN Validation Test Scripts', ()=> {
         })
 
     });
+
+    it('PAN Validation with Invalid Usercode', ()=>{
+
+        cy.api({
+
+            method: 'GET',
+            url: panVerificationUrl,
+            failOnStatusCode: false,
+            headers: {
+
+                authorization: `Bearer ${accessToken}`
+
+            },
+            qs: queryParams
+
+        }).then((response) =>{
+
+               expect(response.status).to.eq(405);
+
+        })
+
+    });
+
+    it('PAN Validation with Invalid Access Token', ()=>{
+
+        cy.api({
+
+            method: 'GET',
+            url: panVerificationUrl,
+            failOnStatusCode: false,
+            headers: {
+
+                authorization: `Bearer ${accessToken}`
+
+            },
+            qs: queryParams
+
+        }).then((response) =>{
+
+               expect(response.status).to.eq(405);
+
+        })
+
+    });
+
+    it('PAN Validation with Invalid Url', ()=>{
+
+        cy.api({
+
+            method: 'GET',
+            url: panVerificationUrl,
+            failOnStatusCode: false,
+            headers: {
+
+                authorization: `Bearer ${accessToken}`
+
+            },
+            qs: queryParams
+
+        }).then((response) =>{
+
+               expect(response.status).to.eq(405);
+
+        })
+
+    });
+
+    it('PAN Validation with Invalid PAN', ()=>{
+
+        cy.api({
+
+            method: 'GET',
+            url: panVerificationUrl,
+            failOnStatusCode: false,
+            headers: {
+
+                authorization: `Bearer ${accessToken}`
+
+            },
+            qs: queryParams
+
+        }).then((response) =>{
+
+               expect(response.status).to.eq(405);
+
+        })
+
+    });
+
+    it('PAN Validation with Invalid PAN', ()=>{
+
+        cy.api({
+
+            method: 'GET',
+            url: panVerificationUrl,
+            failOnStatusCode: false,
+            headers: {
+
+                authorization: `Bearer ${accessToken}`
+
+            },
+            qs: queryParams
+
+        }).then((response) =>{
+
+               expect(response.status).to.eq(405);
+
+        })
+
+    });
+
 
 });
