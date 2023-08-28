@@ -7,7 +7,7 @@ const environment = 'prod'
 let baseUrl = environment == 'prod' ? `https://eos.onefin.app/`:`https://${environment}.eos.onefin.app/`;
 let userInvestmentsUrl = baseUrl+`${apiEndpoints.getUserInvestments}`;
 let incorrectuserInvestmentsUrl = baseUrl + `${apiEndpoints.invalidgetUserInvestments}`;
-let usercode = '5df9d9e3-134b-40e7-9f96-79f5a8cdfd78';
+let usercode = 'd2b9cf1f-5ed0-4a76-9c16-86d12ec5351c';
 const gm = new getMethods();
 
 describe('Get User Investments Unit Test Scripts', () => {

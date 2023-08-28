@@ -2,11 +2,11 @@
 import 'cypress-plugin-api'
 import apiEndpoints from '../../../../support/api_end_points';
 
-const environment = 'newqa'
+const environment = 'uat'
 let baseUrl = environment == 'prod' ? `https://eos.onefin.app/` : `https://${environment}.eos.onefin.app/`;
 let userProfileUrl = baseUrl + `${apiEndpoints.postUserProfile}`;
 let incorrecuserMemberDetailsUrl = baseUrl + `${apiEndpoints.invalidgetMemberDetails}`;
-let userCode = prompt('d2b9cf1f-5ed0-4a76-9c16-86d12ec5351c');
+let userCode = 'ae7abe40-175e-489d-9e74-074dfe18a9d7';
 
 describe('Post User Profile Unit Test Scripts', () => {
 

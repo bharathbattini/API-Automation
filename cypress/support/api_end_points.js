@@ -16,7 +16,7 @@ const apiEndpoints = {
     // POST APIs End Points In EOS API Platform
     postUserProfile : 'api/customer/profile',
     postUserDependent : 'api/customer/dependent',
-    postIncomeExpense : 'api/customer/income-expense',
+    postUserIncomeExpense : 'api/customer/income-expense',
     postUserLoans : 'api/customer/loans',
     postUserInsurance : 'api/customer/insurance',
     postRefreshWorkbook : 'api/user/generate/fwp',
@@ -30,7 +30,7 @@ const apiEndpoints = {
     postEsignDocument : `api/${version}/customer/esign-documnet`,
     postMemberIdGenerate : `api/${version}/user/membership_id/generate`,
 
-    //Invalid API End Points
+    //Invalid GET API End Points
     invalidGetUserProfile : 'api/customer/profil',
     invalidGetUserDependent : 'api/customer/dependen',
     invalidgetUserInvestments : 'api/customer/investments',
@@ -41,7 +41,13 @@ const apiEndpoints = {
     invalidgetOnboardingStatusTracker : 'api/customer/onboarding_status/tracker',
     invalidgetQFAList : 'api/qfa/list',
 
-
+    //Invalid POST API End Points
+    invalidPostUserProfile : 'api/customer/profil',
+    invalidPostUserDependent : 'api/customer/dependen',
+    invalidPostIncomeExpense : 'api/customer/income-expens',
+    invalidPostUserLoans : 'api/customer/loan',
+    invalidPostUserInsurance : 'api/customer/insuranc',
+    invalidPostRefreshWorkbook : 'api/user/generate/fw', 
 
 }
 
