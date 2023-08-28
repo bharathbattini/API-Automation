@@ -8,9 +8,9 @@ let userDependentUrl = baseUrl + `${apiEndpoints.postUserDependent}`;
 let incorrecuserDependentUrll = baseUrl + `${apiEndpoints.invalidPostUserDependent}`;
 let userCode = 'ae7abe40-175e-489d-9e74-074dfe18a9d7';
 
-describe('Post User Profile Unit Test Scripts', () => {
+describe('Post User Dependency Unit Test Scripts', () => {
 
-    it.only('Post User Profile with Positive Case', () => {
+    it.only('Post User Dependency with Positive Case', () => {
 
         cy.api({
 

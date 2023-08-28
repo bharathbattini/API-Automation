@@ -6,7 +6,7 @@ import apiEndpoints from '../../../../support/api_end_points';
 const environment = 'newqa'
 let baseUrl = environment == 'prod' ? `https://eos.onefin.app/`:`https://${environment}.eos.onefin.app/`;
 let userProfileUrl = baseUrl+`${apiEndpoints.getUserProfile}`;
-let usercode = 'd2b9cf1f-5ed0-4a76-9c16-86d12ec5351c';
+let usercode = '0ad3fc39-2524-49d2-b800-907a727e4c32';
 const gm = new getMethods();
 
 describe('Get User Profile Unit Test Scripts', () => {
