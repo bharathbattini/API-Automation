@@ -2,7 +2,7 @@
 import 'cypress-plugin-api'
 import apiEndpoints from '../../../../support/api_end_points';
 
-const environment = 'uat'
+const environment = 'newqa'
 let baseUrl = environment == 'prod' ? `https://eos.onefin.app/` : `https://${environment}.eos.onefin.app/`;
 let userIncomeExpenseUrl = baseUrl + `${apiEndpoints.postUserIncomeExpense}`;
 let incorrecuserDependentUrll = baseUrl + `${apiEndpoints.invalidPostIncomeExpense}`;
@@ -17,8 +17,13 @@ describe('Post User Profile Unit Test Scripts', () => {
             method: 'POST',
             url: userIncomeExpenseUrl,
             failOnStatusCode: false,
+            headers:{
+
+              authorization : `Bearer ${apiEndpoints.accessToken}`
+
+            },
             body: {
-                "user_code": userCode,
+                "user_code": `${apiEndpoints.userCode}`,
                 "incomes": [
                   {
                     "category_id": 65,

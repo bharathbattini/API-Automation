@@ -2,13 +2,12 @@
 import 'cypress-plugin-api'
 import apiEndpoints from '../../../../support/api_end_points';
 
-const environment = 'uat'
+const environment = 'newqa'
 let baseUrl = environment == 'prod' ? `https://eos.onefin.app/` : `https://${environment}.eos.onefin.app/`;
 let userDependentUrl = baseUrl + `${apiEndpoints.postUserDependent}`;
 let incorrecuserDependentUrll = baseUrl + `${apiEndpoints.invalidPostUserDependent}`;
-let userCode = 'ae7abe40-175e-489d-9e74-074dfe18a9d7';
 
-describe('Post User Dependency Unit Test Scripts', () => {
+describe('Add User Dependency Unit Test Scripts', () => {
 
     it.only('Post User Dependency with Positive Case', () => {
 
@@ -17,8 +16,13 @@ describe('Post User Dependency Unit Test Scripts', () => {
             method: 'POST',
             url: userDependentUrl,
             failOnStatusCode: false,
+            headers:{
+
+              authorization : `Bearer ${apiEndpoints.accessToken}`
+
+            },
             body: {
-                "user_code": userCode,
+                "user_code": `${apiEndpoints.userCode}`,
                 "relative_dependency": true,
                 "parent_dependency": true,
                 "spouse_dependency": true,
