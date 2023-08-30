@@ -10,7 +10,7 @@ let userCode = 'ae7abe40-175e-489d-9e74-074dfe18a9d7';
 
 describe('Post User Profile Unit Test Scripts', () => {
 
-    it.only('Post User Profile with Positive Case', () => {
+    it('Post User Profile with Positive Case', () => {
 
         cy.api({
 

@@ -9,7 +9,7 @@ let incorrectUserInvestmentUrl = baseUrl + `${apiEndpoints.invalidPostUserInvest
 
 describe('Post User Profile Unit Test Scripts', () => {
 
-    it.only('Post User Profile with Positive Case', () => {
+    it('Post User Profile with Positive Case', () => {
 
         cy.api({
 

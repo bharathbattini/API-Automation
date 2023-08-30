@@ -9,7 +9,7 @@ let incorrecuserDependentUrll = baseUrl + `${apiEndpoints.invalidPostUserDepende
 
 describe('Add User Dependency Unit Test Scripts', () => {
 
-    it.only('Post User Dependency with Positive Case', () => {
+    it('Post User Dependency with Positive Case', () => {
 
         cy.api({
 
