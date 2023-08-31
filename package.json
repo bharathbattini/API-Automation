@@ -7,6 +7,7 @@
     "allureResultsPath": "allure-results"
   },
   "scripts": {
+
     "cy:run:getapi": "cypress run --spec cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts",
     "cy:run": "cypress run --env allure=true --spec cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_profile_copy.cy.js --browser chrome",
     "clean:folders": "rm -rf allure-report/* && rm -rf allure-results/*",
@@ -27,7 +28,8 @@
   "homepage": "https://github.com/1-Fin/API-Automation-EOS#readme",
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.40.0",
-    "cypress": "^12.17.2"
+    "cypress": "^12.17.2",
+    "cypress-mochawesome-reporter": "^3.5.1"
   },
   "dependencies": {
     "cypress-plugin-api": "^2.11.1",

@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2023-08-31T07:24:38.946Z",
+    "end": "2023-08-31T07:24:41.713Z",
+    "duration": 2767,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2a6c29e6-29e3-4aea-82cc-d0d8505c6dc3",
+      "title": "",
+      "fullFile": "cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_loans.cy.js",
+      "file": "cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_loans.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3a28ec57-b325-4d0b-85af-d1c2bd233173",
+          "title": "Get User Loans Unit Test Scripts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get User Loans with Positive Case",
+              "fullTitle": "Get User Loans Unit Test Scripts Get User Loans with Positive Case",
+              "timedOut": null,
+              "duration": 413,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_loans.cy.js/Get User Loans Unit Test Scripts -- Get User Loans with Positive Case (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('GET', userLoansUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(200);\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 200",
+                "estack": "AssertionError: expected 503 to equal 200\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_loans.cy.js:19:42)",
+                "diff": "- 503\n+ 200\n"
+              },
+              "uuid": "eca0a50b-cf52-4ac3-9762-245716736bda",
+              "parentUUID": "3a28ec57-b325-4d0b-85af-d1c2bd233173",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Loans with Incorrect Method",
+              "fullTitle": "Get User Loans Unit Test Scripts Get User Loans with Incorrect Method",
+              "timedOut": null,
+              "duration": 432,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_loans.cy.js/Get User Loans Unit Test Scripts -- Get User Loans with Incorrect Method (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('POST', userLoansUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(415);\n  expect(response.body).to.have.property('type').to.be.a('String');\n  expect(response.body).to.have.property('title').to.be.a('String');\n  expect(response.body).to.have.property('title').contain('Unsupported Media Type');\n  expect(response.body).to.have.property('status').to.be.a('number');\n  expect(response.body).to.have.property('traceId').to.be.a('String');\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 415",
+                "estack": "AssertionError: expected 503 to equal 415\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_loans.cy.js:29:42)",
+                "diff": "- 503\n+ 415\n"
+              },
+              "uuid": "488b0b8b-e18f-47a6-91eb-a92d9b5b3c31",
+              "parentUUID": "3a28ec57-b325-4d0b-85af-d1c2bd233173",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Loans with Invalid Method",
+              "fullTitle": "Get User Loans Unit Test Scripts Get User Loans with Invalid Method",
+              "timedOut": null,
+              "duration": 355,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_loans.cy.js/Get User Loans Unit Test Scripts -- Get User Loans with Invalid Method (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('DEL', userLoansUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(415);\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` was called with an invalid method: `DEL`. Method can be: `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `OPTIONS`, or any other method supported by Node's HTTP parser.\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` was called with an invalid method: `DEL`. Method can be: `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `OPTIONS`, or any other method supported by Node's HTTP parser.\n\nhttps://on.cypress.io/request\n    at Context.request (http://localhost:4200/__cypress/runner/cypress_runner.js:149091:78)\n    at wrapped (http://localhost:4200/__cypress/runner/cypress_runner.js:160808:43)\nFrom Your Spec Code:\n    at Context.ee (webpack:///./node_modules/cypress-plugin-api/dist/support.js:14:2002)",
+                "diff": null
+              },
+              "uuid": "465b9f2f-e0fc-4f9c-b2cb-abfe9be5817d",
+              "parentUUID": "3a28ec57-b325-4d0b-85af-d1c2bd233173",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Loans with Incorrect URL",
+              "fullTitle": "Get User Loans Unit Test Scripts Get User Loans with Incorrect URL",
+              "timedOut": null,
+              "duration": 658,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_loans.cy.js/Get User Loans Unit Test Scripts -- Get User Loans with Incorrect URL (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('GET', incorrectuserLoansUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(200);\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 200",
+                "estack": "AssertionError: expected 503 to equal 200\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_loans.cy.js:53:42)",
+                "diff": "- 503\n+ 200\n"
+              },
+              "uuid": "e4c72a25-2e3a-4598-86ac-d0f73782502e",
+              "parentUUID": "3a28ec57-b325-4d0b-85af-d1c2bd233173",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Loans with Invalid URL",
+              "fullTitle": "Get User Loans Unit Test Scripts Get User Loans with Invalid URL",
+              "timedOut": null,
+              "duration": 580,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_loans.cy.js/Get User Loans Unit Test Scripts -- Get User Loans with Invalid URL (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('GET', incorrectuserLoansUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(200);\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 200",
+                "estack": "AssertionError: expected 503 to equal 200\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_loans.cy.js:63:42)",
+                "diff": "- 503\n+ 200\n"
+              },
+              "uuid": "d0b85ce3-6ea6-4d34-8c9e-f13eaca27c2c",
+              "parentUUID": "3a28ec57-b325-4d0b-85af-d1c2bd233173",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "eca0a50b-cf52-4ac3-9762-245716736bda",
+            "488b0b8b-e18f-47a6-91eb-a92d9b5b3c31",
+            "465b9f2f-e0fc-4f9c-b2cb-abfe9be5817d",
+            "e4c72a25-2e3a-4598-86ac-d0f73782502e",
+            "d0b85ce3-6ea6-4d34-8c9e-f13eaca27c2c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2438,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2023-08-31T07:24:24.595Z",
+    "end": "2023-08-31T07:24:27.740Z",
+    "duration": 3145,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b38fcd4e-5c6f-442e-9cc7-3bf8806df7be",
+      "title": "",
+      "fullFile": "cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_income_expense.cy.js",
+      "file": "cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_income_expense.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "deb1e7ae-eeb8-4f7a-bf56-ba5d1634acca",
+          "title": "Get User Income-Expense Unit Test Scripts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get User Income-Expense with Positive Case",
+              "fullTitle": "Get User Income-Expense Unit Test Scripts Get User Income-Expense with Positive Case",
+              "timedOut": null,
+              "duration": 982,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_income_expense.cy.js/Get User Income-Expense Unit Test Scripts -- Get User Income-Expense with Positive Case (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('GET', userIncomeExpenseUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(200);\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 200",
+                "estack": "AssertionError: expected 503 to equal 200\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_income_expense.cy.js:19:42)",
+                "diff": "- 503\n+ 200\n"
+              },
+              "uuid": "1a100199-53f0-4556-acc8-7ab6a62f10cc",
+              "parentUUID": "deb1e7ae-eeb8-4f7a-bf56-ba5d1634acca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Income-Expense with Incorrect Method",
+              "fullTitle": "Get User Income-Expense Unit Test Scripts Get User Income-Expense with Incorrect Method",
+              "timedOut": null,
+              "duration": 325,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_income_expense.cy.js/Get User Income-Expense Unit Test Scripts -- Get User Income-Expense with Incorrect Method (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('POST', userIncome - ExpenseUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(415);\n  expect(response.body).to.have.property('type').to.be.a('String');\n  expect(response.body).to.have.property('title').to.be.a('String');\n  expect(response.body).to.have.property('title').contain('Unsupported Media Type');\n  expect(response.body).to.have.property('status').to.be.a('number');\n  expect(response.body).to.have.property('traceId').to.be.a('String');\n});",
+              "err": {
+                "message": "ReferenceError: userIncome is not defined",
+                "estack": "ReferenceError: userIncome is not defined\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_income_expense.cy.js:27:36)",
+                "diff": null
+              },
+              "uuid": "0eab0fcf-9b2b-4570-9721-a11ecae5bca8",
+              "parentUUID": "deb1e7ae-eeb8-4f7a-bf56-ba5d1634acca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Income-Expense with Invalid Method",
+              "fullTitle": "Get User Income-Expense Unit Test Scripts Get User Income-Expense with Invalid Method",
+              "timedOut": null,
+              "duration": 349,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_income_expense.cy.js/Get User Income-Expense Unit Test Scripts -- Get User Income-Expense with Invalid Method (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('DEL', userIncomeExpenseUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(415);\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` was called with an invalid method: `DEL`. Method can be: `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `OPTIONS`, or any other method supported by Node's HTTP parser.\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` was called with an invalid method: `DEL`. Method can be: `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `HEAD`, `OPTIONS`, or any other method supported by Node's HTTP parser.\n\nhttps://on.cypress.io/request\n    at Context.request (http://localhost:4200/__cypress/runner/cypress_runner.js:149091:78)\n    at wrapped (http://localhost:4200/__cypress/runner/cypress_runner.js:160808:43)\nFrom Your Spec Code:\n    at Context.ee (webpack:///./node_modules/cypress-plugin-api/dist/support.js:14:2002)",
+                "diff": null
+              },
+              "uuid": "cf45fcc0-b64f-4a29-b00b-a127acbb88bf",
+              "parentUUID": "deb1e7ae-eeb8-4f7a-bf56-ba5d1634acca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Income-Expense with Incorrect URL",
+              "fullTitle": "Get User Income-Expense Unit Test Scripts Get User Income-Expense with Incorrect URL",
+              "timedOut": null,
+              "duration": 535,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_income_expense.cy.js/Get User Income-Expense Unit Test Scripts -- Get User Income-Expense with Incorrect URL (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('GET', incorrectuserIncomeExpenseUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(200);\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 200",
+                "estack": "AssertionError: expected 503 to equal 200\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_income_expense.cy.js:53:42)",
+                "diff": "- 503\n+ 200\n"
+              },
+              "uuid": "423f5d1f-8982-434d-ba88-ef9aaffff0aa",
+              "parentUUID": "deb1e7ae-eeb8-4f7a-bf56-ba5d1634acca",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Income-Expense with Invalid URL",
+              "fullTitle": "Get User Income-Expense Unit Test Scripts Get User Income-Expense with Invalid URL",
+              "timedOut": null,
+              "duration": 602,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_income_expense.cy.js/Get User Income-Expense Unit Test Scripts -- Get User Income-Expense with Invalid URL (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('GET', incorrectuserIncomeExpenseUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(200);\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 200",
+                "estack": "AssertionError: expected 503 to equal 200\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_income_expense.cy.js:63:42)",
+                "diff": "- 503\n+ 200\n"
+              },
+              "uuid": "699bfb76-97f7-46c9-9908-4b84fb1b302d",
+              "parentUUID": "deb1e7ae-eeb8-4f7a-bf56-ba5d1634acca",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "1a100199-53f0-4556-acc8-7ab6a62f10cc",
+            "0eab0fcf-9b2b-4570-9721-a11ecae5bca8",
+            "cf45fcc0-b64f-4a29-b00b-a127acbb88bf",
+            "423f5d1f-8982-434d-ba88-ef9aaffff0aa",
+            "699bfb76-97f7-46c9-9908-4b84fb1b302d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2793,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2023-08-31T07:24:35.251Z",
+    "end": "2023-08-31T07:24:37.410Z",
+    "duration": 2159,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "744b4880-486a-427e-bc1d-6298439c6d82",
+      "title": "",
+      "fullFile": "cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_investments.cy.js",
+      "file": "cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_investments.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "82fdbf06-4db1-42d3-ae40-c2f9cf8ced5b",
+          "title": "Get User Investments Unit Test Scripts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get User Investments with Positive Case",
+              "fullTitle": "Get User Investments Unit Test Scripts Get User Investments with Positive Case",
+              "timedOut": null,
+              "duration": 518,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_investments.cy.js/Get User Investments Unit Test Scripts -- Get User Investments with Positive Case (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('GET', userInvestmentsUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(200);\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 200",
+                "estack": "AssertionError: expected 503 to equal 200\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_investments.cy.js:19:42)",
+                "diff": "- 503\n+ 200\n"
+              },
+              "uuid": "426eb4ce-dff4-457a-92bc-35e6ab10af52",
+              "parentUUID": "82fdbf06-4db1-42d3-ae40-c2f9cf8ced5b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Investments with Incorrect Method",
+              "fullTitle": "Get User Investments Unit Test Scripts Get User Investments with Incorrect Method",
+              "timedOut": null,
+              "duration": 453,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_investments.cy.js/Get User Investments Unit Test Scripts -- Get User Investments with Incorrect Method (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('POST', userInvestmentsUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(415);\n  expect(response.body).to.have.property('type').to.be.a('String');\n  expect(response.body).to.have.property('title').to.be.a('String');\n  expect(response.body).to.have.property('title').contain('Unsupported Media Type');\n  expect(response.body).to.have.property('status').to.be.a('number');\n  expect(response.body).to.have.property('traceId').to.be.a('String');\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 415",
+                "estack": "AssertionError: expected 503 to equal 415\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_investments.cy.js:29:42)",
+                "diff": "- 503\n+ 415\n"
+              },
+              "uuid": "9269f790-b129-4ba7-8248-ae52cd5ddb1e",
+              "parentUUID": "82fdbf06-4db1-42d3-ae40-c2f9cf8ced5b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Investments with Invalid Method",
+              "fullTitle": "Get User Investments Unit Test Scripts Get User Investments with Invalid Method",
+              "timedOut": null,
+              "duration": 372,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_investments.cy.js/Get User Investments Unit Test Scripts -- Get User Investments with Invalid Method (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('DELETE', userInvestmentsUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(415);\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 415",
+                "estack": "AssertionError: expected 503 to equal 415\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_investments.cy.js:43:42)",
+                "diff": "- 503\n+ 415\n"
+              },
+              "uuid": "3472e391-dcf7-4b10-8d29-a9d8229bee7b",
+              "parentUUID": "82fdbf06-4db1-42d3-ae40-c2f9cf8ced5b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Investments with Incorrect URL",
+              "fullTitle": "Get User Investments Unit Test Scripts Get User Investments with Incorrect URL",
+              "timedOut": null,
+              "duration": 364,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_investments.cy.js/Get User Investments Unit Test Scripts -- Get User Investments with Incorrect URL (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('GET', incorrectuserInvestmentsUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(200);\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 200",
+                "estack": "AssertionError: expected 503 to equal 200\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_investments.cy.js:53:42)",
+                "diff": "- 503\n+ 200\n"
+              },
+              "uuid": "33c6b0dd-447a-435a-b1f0-d340b596ab0c",
+              "parentUUID": "82fdbf06-4db1-42d3-ae40-c2f9cf8ced5b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get User Investments with Invalid URL",
+              "fullTitle": "Get User Investments Unit Test Scripts Get User Investments with Invalid URL",
+              "timedOut": null,
+              "duration": 363,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/get_user_investments.cy.js/Get User Investments Unit Test Scripts -- Get User Investments with Invalid URL (failed).png\"\n    ]\n  ]\n}",
+              "code": "gm.getProfileMethods('GET', incorrectuserInvestmentsUrl, usercode).then(response => {\n  expect(response.status).to.be.eq(200);\n});",
+              "err": {
+                "message": "AssertionError: expected 503 to equal 200",
+                "estack": "AssertionError: expected 503 to equal 200\n    at Context.eval (webpack:///./cypress/e2e/APIAutomation/UnitTestScripts/GetAPITestScripts/get_user_investments.cy.js:63:42)",
+                "diff": "- 503\n+ 200\n"
+              },
+              "uuid": "47a4a542-9780-4e79-8dd2-6ea23ebfbb79",
+              "parentUUID": "82fdbf06-4db1-42d3-ae40-c2f9cf8ced5b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "426eb4ce-dff4-457a-92bc-35e6ab10af52",
+            "9269f790-b129-4ba7-8248-ae52cd5ddb1e",
+            "3472e391-dcf7-4b10-8d29-a9d8229bee7b",
+            "33c6b0dd-447a-435a-b1f0-d340b596ab0c",
+            "47a4a542-9780-4e79-8dd2-6ea23ebfbb79"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2070,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

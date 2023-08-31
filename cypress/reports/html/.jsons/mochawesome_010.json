@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-08-31T07:26:55.227Z",
+    "end": "2023-08-31T07:26:55.829Z",
+    "duration": 602,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ded6943b-ca95-4fa2-89a5-9177f065a1d2",
+      "title": "",
+      "fullFile": "cypress/e2e/APIAutomation/BulkUploadScript/fwp_generate.cy.js",
+      "file": "cypress/e2e/APIAutomation/BulkUploadScript/fwp_generate.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "19028cef-cbba-4c5d-90d4-9a97ffec56eb",
+          "title": "FWP Generate Data Bulk Upload",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "FWP Bulk Generate",
+              "fullTitle": "FWP Generate Data Bulk Upload FWP Bulk Generate",
+              "timedOut": null,
+              "duration": 591,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile('/Users/bharath/Downloads/fwpdata1.csv').then(neatCsv).then(jsondata => {\n  console.log(jsondata);\n  jsondata.forEach(a => {\n    cy.api({\n      method: 'POST',\n      url: fwpGenerate + a.user_code,\n      failOnStatusCode: false,\n      qa: {\n        user_code: a.user_code\n      }\n    }).then(response => {\n      //    expect(response.status).to.be.eq(200);\n      list.usercode.push(a.user_code);\n      list.response_code.push(response.status);\n      cy.writeFile('/Users/bharath/Documents/API-Automation-EOS/cypress/fixtures/fwp_generate_responsedata.json', list);\n    });\n  });\n});",
+              "err": {},
+              "uuid": "4cfe7528-e154-46c9-950d-bf41312e56da",
+              "parentUUID": "19028cef-cbba-4c5d-90d4-9a97ffec56eb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4cfe7528-e154-46c9-950d-bf41312e56da"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 591,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
