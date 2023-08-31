@@ -15,6 +15,7 @@ const apiEndpoints = {
     getMemberDetails : 'api/member/details',
     getOnboardingStatusTracker : 'api/customer/onboarding_status/tracker',
     getQFAList : 'api/qfa/list',
+    getallAssignedCustomersUrl : 'api/customer/all-assigned-customer',
 
 
     // POST APIs End Points In EOS API Platform

@@ -1,7 +1,7 @@
 const neatCsv = require("neat-csv");
 import 'cypress-plugin-api';
 
-const statusTrackerURL = 'https://eos.onefin.app/api/customer/3/status-tracker?user_code=';
+const statusTrackerURL = 'https://newqa.eos.onefin.app/api/customer/3/status-tracker?user_code=';
 let userdata = [];
 
 let list = { usercode: []}

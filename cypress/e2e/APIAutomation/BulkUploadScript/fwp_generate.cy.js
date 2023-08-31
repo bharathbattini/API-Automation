@@ -1,7 +1,8 @@
+/// <reference types = 'Cypress'/>
 const neatCsv = require("neat-csv");
 import 'cypress-plugin-api';
 
-const fwpGenerate = 'https://eos.onefin.app/api/user/generate/fwp?user_code=';
+const fwpGenerate = 'https://newqa.eos.onefin.app/api/user/generate/fwp?user_code=';
 
 let userdata = [];
 

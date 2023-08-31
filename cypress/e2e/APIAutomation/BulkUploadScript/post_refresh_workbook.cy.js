@@ -2,7 +2,7 @@
 import 'cypress-plugin-api'
 const neatCsv = require("neat-csv");
 
-const refreshWorkbookUrl = 'https://eos.onefin.app/api/user/generate/fwp?'
+const refreshWorkbookUrl = 'https://newqa.eos.onefin.app/api/user/generate/fwp?'
 let list = {responsebody:[]}
 
 describe('Refresh Workbook Bulk Upload', () => {
