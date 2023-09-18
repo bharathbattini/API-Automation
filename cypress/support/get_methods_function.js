@@ -22,6 +22,27 @@ class getMethods
     });
 }
 
+getCustomerDetailsMethod(getMethods,getUrl,getEmail,fromDate,toDate){
+
+    return cy.api({
+    method: getMethods,
+    url: getUrl,
+    failOnStatusCode: false,
+    headers: {
+
+        authorization: `Bearer ${accessToken}`
+
+    },
+    qs: {
+
+        email: getEmail,
+        fromdate: fromDate,
+        todate: toDate
+    }
+
+});
+}
+
 }
 
 export default getMethods;

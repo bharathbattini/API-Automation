@@ -3,17 +3,16 @@ import 'cypress-plugin-api'
 import getMethods from '../../../../support/get_methods_function';
 import apiEndpoints from '../../../../support/api_end_points';
 
-const environment = 'newqa'
+const environment = 'uat'
 let baseUrl = environment == 'prod' ? `http://eos.onefin.app/`:`https://${environment}.eos.onefin.app/`;
 let userProfileUrl = baseUrl+`${apiEndpoints.getUserProfile}`;
-let usercode = '0ad3fc39-2524-49d2-b800-907a727e4c32';
 const gm = new getMethods();
 
 describe('Get User Profile Unit Test Scripts', () => {
 
-    it('Get User Profile with Positive Case', () => {
+    it.only('Get User Profile with Positive Case', () => {
 
-        gm.getProfileMethods('GET',userProfileUrl,usercode).then((response) => {
+        gm.getProfileMethods('GET',userProfileUrl,`${apiEndpoints.userCode}`).then((response) => {
 
             expect(response.status).to.be.eq(200);
 

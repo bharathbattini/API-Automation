@@ -2,8 +2,8 @@ let version = 1;
 
 const apiEndpoints = {
 
-    userCode : '0ad3fc39-2524-49d2-b800-907a727e4c32',
-    accessToken : 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjhGNzAyRUUxMjFCQ0Q1MTI2Nzg3Q0VEODA0NDczNjk1IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2OTMyOTEwMzEsImV4cCI6MTY5MzM3NzQzMSwiaXNzIjoiaHR0cHM6Ly9uZXdxYS5hY2NvdW50Lm9uZWZpbi5hcHAiLCJjbGllbnRfaWQiOiJDdXN0b21lckFwcENsaWVudENyZWRlbnRpYWxzIiwic3ViIjoiMGFkM2ZjMzktMjUyNC00OWQyLWI4MDAtOTA3YTcyN2U0YzMyIiwiYXV0aF90aW1lIjoxNjkyOTY1MzE0LCJpZHAiOiJsb2NhbCIsImlhdCI6MTY5Mjk2NTMxNCwic2NvcGUiOlsiY3VzdG9tZXItbG9naW4iLCJjdXN0b21lci1yZWdpc3RyYXRpb24iLCJtb25leS1zaWduIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.ahjVOz3xEmD6v3W2zE_XXm-vGOzVZgBUzXJVh8WNYRD-9wcdwD_Nvf8D9Gc5ZnoZtdY2PYKLYrvxVLOe88Z4PUi15R3qpZK-cjxFZ1HMIbiItnUhj3O1cZMjNLfqeJLTTIwjrEBLof9GaeS6UaAwbr_fl7-zdt8E1-HjO0YC7sEFad7Fsn1-Gjy3mzNfFoW0aAPYbOjXBtEJxjyO_YVysTXgcBcn5z2nnRMcrkxMIccu8wEa58BTRKXAoHWu5RvTslnMjgzNcjUH8i8YX8-fT3Qmjz49uWl9N948PKy49d76nmnufFwvvA2Dnw80XErQ2Yp1LGhYlBXNg3cfx7Uw3A',
+    userCode : '9d16ac99-19d4-4fd6-bb9a-c67f6e9f53a6',
+    accessToken : 'eyJhbGciOiJSUzI1NiIsImtpZCI6IkZFQzBDMUYwMTYzMDNEMzY3NUVDMzRCQTI4NDYxQkE2IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE2OTQwMDU0MzQsImV4cCI6MTY5NDA5MTgzNCwiaXNzIjoiaHR0cHM6Ly91YXQuYWNjb3VudC5vbmVmaW4uYXBwIiwiY2xpZW50X2lkIjoiQ3VzdG9tZXJBcHBDbGllbnRDcmVkZW50aWFscyIsInN1YiI6IjlkMTZhYzk5LTE5ZDQtNGZkNi1iYjlhLWM2N2Y2ZTlmNTNhNiIsImF1dGhfdGltZSI6MTY5NDAwNTQzNCwiaWRwIjoibG9jYWwiLCJpYXQiOjE2OTQwMDU0MzQsInNjb3BlIjpbImN1c3RvbWVyLWxvZ2luIiwiY3VzdG9tZXItcmVnaXN0cmF0aW9uIiwibW9uZXktc2lnbiIsIm9mZmxpbmVfYWNjZXNzIl0sImFtciI6WyJwd2QiXX0.alI9BfVfhG-in0PQG_VXvcPSw4wPChc0wMxJQd2dRfEUbvt2BlXnfB806WPMaVTqZCUf-TolLYL8udKpI7qojIN3Tp1nu21-M0ZS7kXSi3CcOlFYkGgydA_14ILnlp3AlYpEwxmCvcUurbWfUIwWwhmwOWEAzMZaRWI-GUnzG3WjHvs_NzvgyzDGc0at0p4_WD5TYjTK3JE1xRHuXk6ov0E89C_kLlnAB2RM2VsXrCpRkasLYeB3i49pTNSoP06p8jPU9CKmEfL3dxBr8226JrQzekBHQoEUQVTFyQtaXUag7bC1PTWzGfJOksI3-1GOrtuXmlrYLo2Su3HtIMkm3Q',
 
     // GET APIs End Points In EOS API Platform 
     getUserProfile : 'api/customer/profile',
@@ -15,8 +15,10 @@ const apiEndpoints = {
     getMemberDetails : 'api/member/details',
     getOnboardingStatusTracker : 'api/customer/onboarding_status/tracker',
     getQFAList : 'api/qfa/list',
-    getallAssignedCustomersUrl : 'api/customer/all-assigned-customer',
-
+    getallAssignedCustomers : 'api/customer/all-assigned-customer',
+    getScoreSummary : 'api/user/scores',
+    getCustomerDetails : 'api/customer/detail',
+    getMeetingSummary : 'api/customer/meeting-summary', 
 
     // POST APIs End Points In EOS API Platform
     postUserProfile : 'api/customer/profile',

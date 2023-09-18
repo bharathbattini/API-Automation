@@ -1,5 +1,5 @@
 /// <reference types = "Cypress" />
-import 'cypress-plugin-api'
+import 'cypress-plugin-api';
 import getMethods from '../../../../support/get_methods_function';
 import apiEndpoints from '../../../../support/api_end_points';
 
