@@ -2,7 +2,7 @@
 import 'cypress-plugin-api'
 import apiEndpoints from '../../../../support/api_end_points';
 
-const environment = 'newqa'
+let environment = `${apiEndpoints.env}`;
 let baseUrl = environment == 'prod' ? `https://eos.onefin.app/` : `https://${environment}.eos.onefin.app/`;
 let userProfileUrl = baseUrl + `${apiEndpoints.postUserProfile}`;
 let incorrecuserMemberDetailsUrl = baseUrl + `${apiEndpoints.invalidgetMemberDetails}`;
@@ -16,7 +16,7 @@ describe('Post User Profile Unit Test Scripts', () => {
             method: 'POST',
             url: userProfileUrl,
             failOnStatusCode: false,
-            headers:{
+            headers: {
 
                 authorization: `Bearer ${apiEndpoints.accessToken}`
 
@@ -37,7 +37,7 @@ describe('Post User Profile Unit Test Scripts', () => {
                 "qualification": "Bachelors"
             }
 
-        }).then((response) =>{
+        }).then((response) => {
 
             expect(response.status).to.be.eq(200);
 

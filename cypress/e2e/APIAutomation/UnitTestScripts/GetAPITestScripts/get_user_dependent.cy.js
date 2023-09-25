@@ -3,7 +3,7 @@ import 'cypress-plugin-api'
 import getMethods from '../../../../support/get_methods_function';
 import apiEndpoints from '../../../../support/api_end_points';
 
-const environment = 'newqa'
+let environment = `${apiEndpoints.env}`;
 let baseUrl = environment == 'prod' ? `https://eos.onefin.app/`:`https://${environment}.eos.onefin.app/`;
 let userDependentUrl = baseUrl+`${apiEndpoints.getUserDependent}`;
 let incorrectUserDependentUrl = baseUrl + `${apiEndpoints.invalidGetUserDependent}`;

@@ -3,7 +3,7 @@ import 'cypress-plugin-api';
 import apiEndpoints from '../../../../support/api_end_points';
 import getMethods from '../../../../support/get_methods_function';
 
-const environment = 'newqa'
+let environment = `${apiEndpoints.env}`; 
 let baseUrl = environment == 'prod' ? `https://eos.onefin.app/`:`https://${environment}.eos.onefin.app/`;
 let panVerificationUrl = baseUrl+`${apiEndpoints.postPanVerification}`;
 const PAN = 'CHIPB2816E'

@@ -2,7 +2,7 @@
 import 'cypress-plugin-api'
 import apiEndpoints from '../../../../support/api_end_points';
 
-const environment = 'newqa'
+let environment = `${apiEndpoints.env}`;
 let baseUrl = environment == 'prod' ? `https://eos.onefin.app/` : `https://${environment}.eos.onefin.app/`;
 let userInsuranceUrl = baseUrl + `${apiEndpoints.postUserInsurance}`;
 let incorrecuserInsuranceUrl = baseUrl + `${apiEndpoints.invalidPostIncomeExpense}`;
