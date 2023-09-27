@@ -10,7 +10,7 @@ const gm = new getMethods();
 
 describe('Get User Profile Unit Test Scripts', () => {
 
-    it.only('Get User Profile with Positive Case', () => {
+    it('Get User Profile with Positive Case', () => {
 
         gm.getProfileMethods('GET', userProfileUrl, `${apiEndpoints.userCode}`).then((response) => {
 
