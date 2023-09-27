@@ -19,8 +19,8 @@ const apiEndpoints = {
     getallAssignedCustomers : 'api/customer/all-assigned-customer',
     getScoreSummary : 'api/user/scores',
     getCustomerDetails : 'api/customer/detail',
-    getMeetingSummary : 'api/customer/meeting-summary', 
-
+    getMeetingSummary : 'api/customer/meeting-summary',
+    
     // POST APIs End Points In EOS API Platform
     postUserProfile : 'api/customer/profile',
     postUserDependent : 'api/customer/dependent',
