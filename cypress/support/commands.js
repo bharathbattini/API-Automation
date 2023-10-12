@@ -11,6 +11,27 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
+
+Cypress.Commands.add('GetApis', (getMethods, getUrl, accessToken, getUsercode) => {
+
+    return cy.api({
+        method: getMethods,
+        url: getUrl,
+        failOnStatusCode: false,
+        headers: {
+
+            authorization: `Bearer ${accessToken}`
+
+        },
+        qs: {
+
+            user_code: getUsercode
+        }
+
+    });
+
+});
+
 //
 //
 // -- This is a child command --
