@@ -11,7 +11,7 @@ describe.only('Get User Profile Unit Test Scripts', () => {
 
         cy.GetApis('GET', userProfileUrl, `${apiEndpoints.accessToken}`, `${apiEndpoints.userCode}`).then((response) => {
 
-            expect(response.status).to.be.eq(200);
+            expect(response.status).to.be.not.eq(200);
 
         });
 

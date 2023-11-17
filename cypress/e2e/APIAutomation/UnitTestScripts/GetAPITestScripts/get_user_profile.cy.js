@@ -6,13 +6,14 @@ import apiEndpoints from '../../../../support/api_end_points';
 let environment = `${apiEndpoints.env}`;
 let baseUrl = environment == 'prod' ? `http://eos.onefin.app/` : `https://${environment}.eos.onefin.app/`;
 let userProfileUrl = baseUrl + `${apiEndpoints.getUserProfile}`;
+let invaliduserProfileUrl = baseUrl + `${apiEndpoints.invalidGetUserProfile}`;
 const gm = new getMethods();
 
 describe('Get User Profile Unit Test Scripts', () => {
 
     it('Get User Profile with Positive Case', () => {
 
-        gm.getProfileMethods('GET', userProfileUrl, `${apiEndpoints.userCode}`).then((response) => {
+        cy.GetApis('GET', userProfileUrl, `${apiEndpoints.accessToken}`, `${apiEndpoints.userCode}`).then((response) => {
 
             expect(response.status).to.be.eq(200);
 
@@ -22,7 +23,7 @@ describe('Get User Profile Unit Test Scripts', () => {
 
     it('Get User Profile with Incorrect Method', () => {
 
-        gm.getProfileMethods('POST', userProfileUrl, usercode).then((response) => {
+        cy.GetApis('POST', userProfileUrl, `${apiEndpoints.accessToken}`, `${apiEndpoints.userCode}`).then((response) => {
 
             expect(response.status).to.be.eq(415);
             expect(response.body).to.have.property('type').to.be.a('String');
@@ -36,7 +37,7 @@ describe('Get User Profile Unit Test Scripts', () => {
 
     it('Get User Profile with Invalid Method', () => {
 
-        gm.getProfileMethods('DEL', userProfileUrl, usercode).then((response) => {
+        cy.GetApis('DEL', userProfileUrl, `${apiEndpoints.accessToken}`, `${apiEndpoints.userCode}`).then((response) => {
 
             expect(response.status).to.be.eq(415);
 
@@ -46,7 +47,7 @@ describe('Get User Profile Unit Test Scripts', () => {
 
     it('Get User Profile with Incorrect URL', () => {
 
-        gm.getProfileMethods('GET', invaliduserProfileUrl, usercode).then((response) => {
+        cy.GetApis('GET', invaliduserProfileUrl, `${apiEndpoints.accessToken}`, `${apiEndpoints.userCode}`).then((response) => {
 
             expect(response.status).to.be.eq(200);
 
@@ -54,13 +55,27 @@ describe('Get User Profile Unit Test Scripts', () => {
 
     });
 
-    it('Get User Profile with Invalid URL', () => {
+    it('Get User Profile with Incorrect Access Token', () => {
 
-        gm.getProfileMethods('GET', invaliduserProfileUrl, usercode).then((response) => {
+        cy.GetApis('GET', userProfileUrl, `${apiEndpoints.invalidAccessToken}`, `${apiEndpoints.userCode}`).then((response) => {
 
-            expect(response.status).to.be.eq(200);
+            expect(response.status).to.be.eq(401);
 
         });
+
+
+
+    });
+
+    it('Get User Profile with Incorrect Usercode', () => {
+
+        cy.GetApis('GET', userProfileUrl, `${apiEndpoints.accessToken}`, `${apiEndpoints.incorrectUserCode}`).then((response) => {
+
+            expect(response.status).to.be.eq(404);
+
+        });
+
+
 
     });
 
