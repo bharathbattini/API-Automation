@@ -1,5 +1,7 @@
 const neatCsv = require("neat-csv");
 import 'cypress-plugin-api';
+import '@shelex/cypress-allure-plugin';
+import 'allure-commandline';
 
 const customerProfileUrl = 'https://uat.customer.onefin.app/api/customer/customer-profile';
 const tokenUrl = "https://uat.account.onefin.app/api/user/login-user";

@@ -1,46 +1,45 @@
 import 'cypress-plugin-api';
 
-class getMethods
-{
-    getProfileMethods(getMethods,getUrl,getUsercode){
+class getMethods {
+    getProfileMethods(getMethods, getUrl, getUsercode) {
 
         return cy.api({
-        method: getMethods,
-        url: getUrl,
-        failOnStatusCode: false,
-        headers: {
+            method: getMethods,
+            url: getUrl,
+            failOnStatusCode: false,
+            headers: {
 
-            authorization: `Bearer ${accessToken}`
+                authorization: `Bearer ${accessToken}`
 
-        },
-        qs: {
+            },
+            qs: {
 
-            user_code: getUsercode
-        }
+                user_code: getUsercode
+            }
 
-    });
-}
-
-getCustomerDetailsMethod(getMethods,getUrl,getEmail,fromDate,toDate){
-
-    return cy.api({
-    method: getMethods,
-    url: getUrl,
-    failOnStatusCode: false,
-    headers: {
-
-        authorization: `Bearer ${accessToken}`
-
-    },
-    qs: {
-
-        email: getEmail,
-        fromdate: fromDate,
-        todate: toDate
+        });
     }
 
-});
-}
+    getCustomerDetailsMethod(getMethods, getUrl, getEmail, fromDate, toDate) {
+
+        return cy.api({
+            method: getMethods,
+            url: getUrl,
+            failOnStatusCode: false,
+            headers: {
+
+                authorization: `Bearer ${accessToken}`
+
+            },
+            qs: {
+
+                email: getEmail,
+                fromdate: fromDate,
+                todate: toDate
+            }
+
+        });
+    }
 
 }
 
