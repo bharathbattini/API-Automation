@@ -1,6 +1,7 @@
 import 'cypress-plugin-api';
 
 class getMethods {
+
     getProfileMethods(getMethods, getUrl, getUsercode) {
 
         return cy.api({

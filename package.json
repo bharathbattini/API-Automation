@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/1-Fin/API-Automation-EOS.git"
+    "url": "https://github.com/bharathbattini/API-Automation.git"
   },
   "author": "Bharath Battini",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/1-Fin/API-Automation-EOS/issues"
+    "url": "https://github.com/bharathbattini/API-Automation.git/issues"
   },
-  "homepage": "https://github.com/1-Fin/API-Automation-EOS#readme",
+  "homepage": "https://github.com/bharathbattini/API-Automation.git#readme",
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^6.0.0",
     "@shelex/cypress-allure-plugin": "^2.40.0",
