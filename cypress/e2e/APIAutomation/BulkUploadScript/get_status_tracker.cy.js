@@ -4,7 +4,7 @@ import 'cypress-plugin-api';
 const statusTrackerURL = 'https://newqa.eos.onefin.app/api/customer/3/status-tracker?user_code=';
 let userdata = [];
 
-let list = { usercode: []}
+let list = { usercode: [] }
 
 describe('Status tracker API Status Check', () => {
 
@@ -26,24 +26,23 @@ describe('Status tracker API Status Check', () => {
                         qa:
                         {
 
-                            user_code : a.user_code
+                            user_code: a.user_code
                         }
 
                     }).then((response) => {
 
-                        if (response.status != 200)
-                        {
+                        if (response.status != 200) {
 
-                    //    expect(response.status).to.be.eq(200);
-                        cy.log(a);
-                        cy.log(a.user_code);
-                    var d = a.user_code.toString() + ', ' + response.status.toString();
-                        list.usercode.push(d);
-            
+                            //    expect(response.status).to.be.eq(200);
+                            cy.log(a);
+                            cy.log(a.user_code);
+                            var d = a.user_code.toString() + ', ' + response.status.toString();
+                            list.usercode.push(d);
 
-                        cy.writeFile('/Users/bharath/Documents/cypressproject/cypress/fixtures/statustracker.json', list);
 
-                    }
+                            cy.writeFile('/Users/bharath/Documents/cypressproject/cypress/fixtures/statustracker.json', list);
+
+                        }
                     });
 
                 });
@@ -52,6 +51,6 @@ describe('Status tracker API Status Check', () => {
 
     });
 
-    });
+});
 
 
