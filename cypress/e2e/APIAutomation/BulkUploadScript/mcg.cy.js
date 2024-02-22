@@ -2,7 +2,6 @@ const neatCsv = require("neat-csv");
 import 'cypress-plugin-api';
 
 const mcg = 'https://boffice.marwadionline.com/MSFLThirdPartyAPI/OneFinance/CheckPANExist?pan=';
-const token = 'Basic T25lRmluYW5jZTpNc2ZsMSRGaW5hbmNlQDEyMw==';
 let userdata = [];
 
 let list = { usercode: [] }
